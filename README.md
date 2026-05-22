@@ -1,6 +1,7 @@
 # Logic Parser
 
 A Python toolkit for parsing and validating sentential and predicate logic expressions. 
+
 Given a logic formula, the parser determines whether it is well-formed and identifies its main connective. A companion module identifies which inference rule connects a set of premises to a conclusion.
 
 ---
@@ -13,8 +14,8 @@ Given a logic formula, the parser determines whether it is well-formed and ident
 | `SententialLogic_FormulaGenerator.py` | Randomly generates valid (and optionally invalid) WFFs for testing |
 | `InferenceRule_Parser.py` | Identifies which inference rule justifies a conclusion from given premises |
 | `InferenceRule_Generator.py` | Randomly generates valid inference rule instances for testing |
-| `input.txt` / `output.txt` | Main connective parser input/output |
-| `testCases_Input.txt` / `testCases_Output.txt` | Labelled test cases for the inference rule parser |
+| `input_sentential.txt` / `output_sentential.txt` | Main connective parser input/output |
+| `input_inference.txt` / `output_inference.txt` | Labelled test cases for the inference rule parser |
 
 ---
 
@@ -22,7 +23,7 @@ Given a logic formula, the parser determines whether it is well-formed and ident
 
 ### Main Connective Parser
 
-Reads from `input.txt`, writes to `output.txt`. Each line of input is a formula; each line of output is its main connective, or `∅` if it is not well-formed.
+Reads from `input_sentential.txt`, writes to `output_sentential.txt`. Each line of input is a formula; each line of output is its main connective, or `∅` if it is not well-formed.
 
 ```bash
 python SententialLogic_MainConnective_Parser.py
@@ -46,7 +47,7 @@ PQ
 
 ### Inference Rule Parser
 
-Reads from `Input.txt`, writes to `Output.txt`. Test cases are grouped blocks in the format:
+Reads from `input_inference.txt`, writes to `output_inference.txt`. Test cases are grouped blocks in the format:
 
 ```
 Output: <conclusion>
@@ -72,12 +73,12 @@ MT
 
 ### Generating Test Cases
 
-To generate random WFFs into `input.txt`:
+To generate random WFFs into `input_sentential.txt`:
 ```bash
 python SententialLogic_FormulaGenerator.py
 ```
 
-To generate random inference rule instances into `Input.txt`:
+To generate random inference rule instances into `input_inference.txt`:
 ```bash
 python InferenceRule_Generator.py
 ```
@@ -116,4 +117,5 @@ python InferenceRule_Generator.py
 | **DNE** | Double Negation Out: `~~Φ ⊢ Φ` |
 | **UI** | Universal Instantiation: `∀αΦ ⊢ Φ(α/β)` |
 | **EG** | Existential Generalisation: `Φ ⊢ ∃αΦ(α/β)` |
+| **EI** | Existential Instantiation: `∃αΦ ⊢ Φ(α/β)`, where β is stale (incorrect) |
 | **EI** | Existential Instantiation: `∃αΦ ⊢ Φ(α/β)`, where β is fresh |
