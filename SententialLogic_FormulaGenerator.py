@@ -5,7 +5,7 @@ NUM_WFF = 1000           # Total number of valid formulas to generate
 NUM_INVALID = 0        # Hardcoded number of malformed formulas
 MIN_CONNECTIVES = 0      # Minimum number of connectives per formula
 MAX_CONNECTIVES = 3      # Maximum number of connectives per formula
-OUTPUT_FILE = "input.txt"
+OUTPUT_FILE = "input_sentential.txt"
 
 # Valid components
 ATOMICS = ['P', 'Q', 'R', 'S', 'T']
