@@ -330,8 +330,8 @@ def identify_inference_rule(output, *inputs):
 #  Main Routine: Process Input
 ####################################
 if __name__ == "__main__":
-    with open("Input.txt", "r", encoding="utf-8") as infile, \
-         open("Output.txt", "w", encoding="utf-8") as outfile:
+    with open("input_inference.txt", "r", encoding="utf-8") as infile, \
+         open("output_inference.txt", "w", encoding="utf-8") as outfile:
         lines = [line.strip() for line in infile if line.strip()]
         grouped = []
         i = 0
