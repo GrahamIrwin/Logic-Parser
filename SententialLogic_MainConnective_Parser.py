@@ -58,8 +58,8 @@ def process_line(line):
     return info if valid else '∅'
 
 # Process input and write output
-with open('input.txt', 'r', encoding='utf-8') as infile, \
-     open('output.txt', 'w', encoding='utf-8') as outfile:
+with open('input_sentential.txt', 'r', encoding='utf-8') as infile, \
+     open('output_sentential.txt', 'w', encoding='utf-8') as outfile:
     for line in infile:
         result = process_line(line)
         outfile.write(result + '\n')
