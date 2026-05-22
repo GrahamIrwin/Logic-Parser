@@ -195,15 +195,15 @@ def generate_test_case():
         generate_DNE,
         generate_UI,
         generate_EG,
-        generate_EI,                      # Basic EI (no extra)
+        generate_EI,                           # Basic EI (no extra)
         lambda: generate_EI(with_extra=True),  # EI with extra premise (different constant)
-        generate_EI_extra_same           # EI with extra premise (same constant as conclusion)
+        generate_EI_extra_same                 # EI with extra premise (same constant as conclusion) (incorrect)
     ]
     gen_func = random.choice(generators)
     conclusion, inputs = gen_func()
     return conclusion, inputs
 
-def write_random_inference_input(file_name="Input.txt", num_cases=1000):
+def write_random_inference_input(file_name="input_inference.txt", num_cases=1000):
     input_lines = []
     for _ in range(num_cases):
         conclusion, inputs = generate_test_case()
